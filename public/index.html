@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网页版五子棋</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>五子棋 <span class="sub">Gomoku</span></h1>
+    </header>
+
+    <div class="mode-bar">
+      <button class="mode-btn active" data-mode="pvp">本地双人</button>
+      <button class="mode-btn" data-mode="ai">人机对战</button>
+      <button class="mode-btn" data-mode="online">在线对战</button>
+    </div>
+
+    <div class="main">
+      <div class="board-wrap">
+        <canvas id="board"></canvas>
+      </div>
+
+      <aside class="side">
+        <div id="status" class="status">黑棋落子</div>
+
+        <div class="panel" id="aiPanel" style="display:none;">
+          <button id="firstToggle" class="btn">你执黑(先手)</button>
+        </div>
+
+        <div class="panel" id="onlinePanel" style="display:none;">
+          <div class="row">
+            <button id="createBtn" class="btn">创建房间</button>
+            <button id="joinBtn" class="btn">加入</button>
+            <input id="roomInput" class="input" placeholder="房间号" maxlength="6">
+          </div>
+          <div id="roomInfo" class="hint">点击“创建房间”生成房间号，分享给好友即可对战。</div>
+          <button id="leaveBtn" class="btn ghost">离开房间</button>
+        </div>
+
+        <div class="actions">
+          <button id="undoBtn" class="btn">悔棋</button>
+          <button id="restartBtn" class="btn primary">重新开始</button>
+        </div>
+
+        <div class="rules">
+          <h3>玩法</h3>
+          <ul>
+            <li>黑棋先手，双方轮流落子。</li>
+            <li>任意方向连成五子即获胜。</li>
+            <li>人机模式可切换先后手，AI 自动应招。</li>
+            <li>在线模式创建房间并分享房间号，两人实时对弈。</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+  <script src="ai.js"></script>
+  <script src="online.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

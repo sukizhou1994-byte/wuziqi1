@@ -1,0 +1,13 @@
+{
+  "name": "wuziqi-online",
+  "version": "1.0.0",
+  "description": "网页版五子棋 (Node.js + WebSocket)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  }
+}
